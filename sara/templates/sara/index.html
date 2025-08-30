@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is it sara's birth day?</title>
+    <style>
+        body {
+            font-family: "Arial", sans-serif;
+            background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+            text-align: center;
+            padding: 50px;
+            color: #333;
+            overflow: hidden; /* حتى القلوب ما تطلع برة الشاشة */
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #d6336c;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        p {
+            font-size: 1.3rem;
+            color: #444;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .birthday {
+            background-color: #fff0f6;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: inline-block;
+            max-width: 600px;
+            animation: popUp 1.5s ease-out;
+            position: relative;
+            z-index: 10; /* يخلي البوكس فوق القلوب */
+        }
+
+        .emoji {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+            animation: bounce 2s infinite;
+        }
+
+        /* قلوب متحركة */
+        .heart {
+            position: absolute;
+            font-size: 1.5rem;
+            color: red;
+            animation: floatUp 6s linear infinite;
+            opacity: 0.7;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes popUp {
+            from { transform: scale(0.8); opacity: 0; }
+            to   { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes floatUp {
+            from { transform: translateY(100vh) scale(0.5); opacity: 0.6; }
+            to   { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+        }
+    </style>
+
+
+</head>
+<body>
+    <span class="heart" style="left:10%;">❤️</span>
+    <span class="heart" style="left:30%; animation-delay: 2s;">💖</span>
+    <span class="heart" style="left:50%; animation-delay: 4s;">💕</span>
+    <span class="heart" style="left:70%; animation-delay: 1s;">💓</span>
+    <span class="heart" style="left:90%; animation-delay: 3s;">💘</span>
+    <h1>Is it sara's birthday</h1>
+    {% if sara_pirthday %}
+        <h1>🎉 عيد ميلاد سعيد يا سارة 🎉</h1>
+        <p>كل عام وأنتِ أجمل ما في حياتي، وجودك بحد ذاته هدية ما بتتكرر ❤️</p>
+    {% else %}
+        <h1>🌸 أهلاً سارة 🌸</h1>
+        <p>حتى لو مو عيد ميلادك، إنتِ سبب فرحتي كل يوم 💕</p>
+        <p>بحبك</p>
+    {% endif %}
+</body>
+</html>
